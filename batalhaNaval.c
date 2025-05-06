@@ -14,6 +14,29 @@ int main()
     tabuleiro[6][0] = 3;
     tabuleiro[7][0] = 3;
 
+    // Posição do navio 1 na diagonal
+    tabuleiro[2][8] = 3;
+    tabuleiro[3][7] = 3;
+    tabuleiro[4][6] = 3;
+
+    // Posição do navio 2 na diagonal
+    tabuleiro[6][8] = 3;
+    tabuleiro[7][7] = 3;
+    tabuleiro[8][6] = 3;
+
+    // Verificando se há sobreposição de navios
+    for (int i = 0; i < 10; i++)
+    {
+        for (int j = 0; j < 10; j++)
+        {
+            if (tabuleiro[i][j] > 3)
+            {
+                printf("Erro: Sobreposição de navios na posição (%d,%d)\n", i, j);
+                return 1;
+            }
+        }
+    }
+
     // Colunas da matriz com letras de A a J
     printf("   "); // Espaço para alinhar as letras com  os números de cada coluna
     for (int j = 0; j < 10; j++)
